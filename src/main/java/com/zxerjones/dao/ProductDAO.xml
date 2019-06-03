@@ -21,4 +21,8 @@
 	<select id="getProductById" parameterType="int" resultType="Product">
 		select * from easybuy_product where id = #{id}
 	</select>
+	<select id="getProductByName" parameterType="int" resultType="Product">
+		select * from easybuy_product where name like
+	</select>
+	
 </mapper>		

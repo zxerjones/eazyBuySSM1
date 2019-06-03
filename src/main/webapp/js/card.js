@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ul li选项选中状态的切换
  */
 $(function(){
@@ -22,6 +22,7 @@ function addUpdate( entityId , stock ){
 		return false ;
 	}
 	$("input[name='quantity']").val( ++quantity ) ;
+	
 }
 /**
  * 控制商品数量的减少
@@ -33,6 +34,7 @@ function jianUpdate( entityId ){
 		quantity = 1 ;
 	}
 	$("input[name='quantity']").val( quantity ) ;
+	
 }
 /**
  * 筛选页面，跳转到购物车
@@ -56,11 +58,22 @@ function subQuantity( obj , price , entityId ){
 	}
 	//将数据写到原有的输入框内
 	$("input[name='quantit']").eq(index).val( quantity ) ;
+	// 单品价格
+	var price = quantity * price ;
+	$(".qprice").eq(index).html( price ) ;
+	// 总价格
+	var price_sku = $(".qprice");
+	var values = 0;
+	for (var i = 0; i < price_sku.length; i++){
+		values += ( (parseFloat(price_sku[i].innerHTML)));
+	}
+	values = values.toFixed(1);	
+	var result = values.toString();
+	$("#totleprice").text("￥" + result);
 	
 }
 function addQuantity( obj , price , entityId , stock ){
-	var index = $(".car_btn_1").index(obj) ;
-	
+	var index = $(".car_btn_1").index(obj) ;	
 	var quantity = $("input[name='quantit']").eq(index).val() ;
 	if( quantity >= stock ){
 		return false ;
@@ -70,6 +83,15 @@ function addQuantity( obj , price , entityId , stock ){
 	$("input[name='quantit']").eq(index).val( quantity ) ;
 	var price = quantity * price ;
 	$(".qprice").eq(index).html( price ) ;
+	
+	var price_sku = $(".qprice");
+	var values = 0;
+	for (var i = 0; i < price_sku.length; i++){
+		values += ( (parseFloat(price_sku[i].innerHTML)));
+	}
+	values = values.toFixed(1);
+	var result = values.toString();
+	$("#totleprice").text("￥" + result);
 	
 }
 
@@ -86,6 +108,7 @@ function jiesuan(){
 	var name = $("#name").val() ;
 	var price = $("#myPrice").val() ;
 	var quantity = $("input[name='quantit']").val() ;
-	window.location.href="isLogin?fileName="+fileName+"&name="+name+"&price="+price+"&quantity="+quantity;
+	var totalPrice = $("#totleprice").text();
+	window.location.href="isLogin?fileName="+fileName+"&name="+name+"&price="+price+"&quantity="+quantity + "&totalPirce=" + totalPrice;
 	
 }

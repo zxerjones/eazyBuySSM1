@@ -35,10 +35,18 @@ public class UserHandler {
 	
 	@RequestMapping("/easybuy_register")
 	public String register( User user ){
-		System.out.println( userService.register( user ) );
-		return "login" ;
+//		System.out.println( userService.register( user ) );
+		String loginName = user.getLoginName();
+		User user2 = userService.searchUserByLoginName(loginName);
+		if (user2 == null) {
+			userService.register( user );
+			return "login" ;
+		} else {
+			return "register";
+		}
 	}
-	@RequestMapping("easybuy_login")
+	
+	@RequestMapping("/easybuy_login")
 	public ModelAndView login( User user , HttpSession session ){
 		ModelAndView mav = new ModelAndView() ;
 		User user1 = userService.login(user) ;
@@ -55,21 +63,22 @@ public class UserHandler {
 	}
 	
 	@RequestMapping("/isLogin")
-	public ModelAndView islogin( HttpSession session , String fileName ,  String name , double price , Integer quantity ){
+	public ModelAndView islogin( HttpSession session , String fileName ,  String name , double price , Integer quantity, String totalPirce ){
 		ModelAndView mav = new ModelAndView() ;
 		User user = (User) session.getAttribute("user") ;
-		
+		totalPirce = totalPirce.substring(1);
+		session.setAttribute("totalPirce", totalPirce);
 		if( user != null ){
 			List<Address> addresses = addressService.getAddress(user.getId()) ;
 			Product product = new Product() ;
 			product.setFileName(fileName);
 			
-			try {
-				name = new String( name.getBytes("ISO8859-1"),"utf-8") ;
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+//			try {
+//				name = new String( name.getBytes("ISO8859-1"),"utf-8") ;
+//			} catch (UnsupportedEncodingException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			product.setName(name);
 			product.setPrice(price);
 			mav.setViewName("settlement2");

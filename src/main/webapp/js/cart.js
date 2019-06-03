@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by bdqn on 2016/5/3.
  */
 /**
@@ -143,11 +143,11 @@ function settlement3() {
 	}
 	//新地址需要存储进表里
 	if (addressId == "-1"){
-		window.location.href = "http://localhost:8080/eb/cart_addAdress?flag2=0&newAddress="+newAddress+"&newRemark="+newRemark;
+		window.location.href = "http://localhost:8080/easybuySSM1/cart_addAdress?flag2=0&newAddress="+newAddress+"&newRemark="+newRemark;
 	} 
 	//不是新地址
 	if (addressId > 0){
-		window.location.href = "http://localhost:8080/eb/cart_addAdress?flag2=1&addressId="+addressId;
+		window.location.href = "http://localhost:8080/easybuySSM1/cart_addAdress?flag2=1&addressId="+addressId;
 	} 
 	
 }

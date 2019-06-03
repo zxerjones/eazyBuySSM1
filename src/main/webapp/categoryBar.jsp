@@ -38,4 +38,4 @@
 				}</a></li>
 	</c:forEach>
 </ul>
-<div class="m_ad">中秋送好礼！</div>
+<div class="m_ad">端午送好礼！</div>

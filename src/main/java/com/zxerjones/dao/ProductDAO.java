@@ -17,6 +17,10 @@ public interface ProductDAO {
 	
 	public Product getProductById( int id ) ;
 	
+	public List<Product> getProductByName(String name, int start, int page);
+	
+	public int getPagesByName(String name);
+	
 	
 	
 }

@@ -5,6 +5,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <%@ include file="header.jsp" %>
+    <style type="">
+    	#product_name_span {
+				margin-left: -80px;
+			    width: 100px;
+			    display: inline-block;
+			    height: 105px;
+			    line-height: 105px;
+}
+    	
+    </style>
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/cart.js"></script>
     <script type="text/javascript">
@@ -66,7 +76,7 @@
 		                        <div class="c_s_img">
 		                            <img src="images/${product.fileName }" width="73" height="73"/>
 		                        </div>
-		                            ${product.name }
+		                         <span id="product_name_span">${product.name }<span>
 		                    </td>
 		                    <td align="center">${quantity }</td>
 		                    <td align="center" style="color:#ff4e00;">￥${product.price*quantity  }</td>

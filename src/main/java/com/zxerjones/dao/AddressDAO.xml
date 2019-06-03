@@ -4,4 +4,12 @@
 	<select id="getAddress" parameterType="int" resultType="Address">
 		select * from easybuy_user_address where userId = #{userId}
 	</select>
+	<insert id="addAddress" parameterType="com.zxerjones.entity.bo.AddressBO">
+		insert into easybuy_user_address(userId, address, createTime,remark)
+			values(#{userId}, #{address}, #{createTime}, #{remark})
+	</insert>
+	
+	<select id="getAddressById" parameterType="int" resultType="address">
+		select * from easybuy_user_address where id=#{addressId}
+	</select>
 </mapper>		

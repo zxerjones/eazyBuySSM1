@@ -180,7 +180,7 @@
 									</div>
 									<div class="img">
 										<a
-											href="goodsList_getProductById?id=${produuct.id}">
+											href="goodsList_getProductById?id=${product.id}">
 											<img src="images/${product.fileName } " width="185"
 											height="155" />
 										</a>

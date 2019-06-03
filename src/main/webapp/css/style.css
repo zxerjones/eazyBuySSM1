@@ -5591,6 +5591,7 @@ table.car_tab tr td.car_th {
 }
 
 .c_s_img {
+	marigin-top:20px;
     width: 73px;
     height: 73px;
     overflow: hidden;
@@ -5955,6 +5956,5 @@ ul.pay li.checked .ch_img {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-
 
 

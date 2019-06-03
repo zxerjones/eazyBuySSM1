@@ -9,4 +9,6 @@ public interface ProductService {
 	public List<Product> getProductByLevel( int level , int id , int page ) ;
 	public int getPages( int level , int id ) ;
 	public Product getProductById( int id ) ;
+	public List<Product> getProductByName(String name , int page);
+	public int getPagesByName(String name);
 }

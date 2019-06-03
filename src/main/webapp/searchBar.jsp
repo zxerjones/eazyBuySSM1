@@ -8,10 +8,10 @@
 <body>
 <div class="top">
     <div class="logo">
-        <a href="goodsHandler/getAll"><img src="images/logo.png"></a>
+        <a href="easybuy_queryAll"><img src="images/logomaimai.png"></a>
     </div>
     <div class="search">
-        <form action="goodsList_queryByName?page=1" method="post">
+        <form action="goodsList_queryGoodsByName?page=1" method="post">
             <input type="text" value="${keyWord}" name="keyWord" class="s_ipt">
             <input type="submit" value="搜索" class="s_btn">
         </form>

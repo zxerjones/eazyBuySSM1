@@ -57,11 +57,22 @@ public class ProductServiceImpl implements ProductService{
 		
 		return productDAO.getProductById( id ) ;
 	}
-
-	
-
-
-
-	
-
+	@Override
+	public List<Product> getProductByName(String name, int page) {
+		// TODO Auto-generated method stub
+		int start = ( page - 1 ) * prePage ; 
+		return productDAO.getProductByName(name,start, prePage);
+	}
+	@Override
+	public int getPagesByName(String name) {
+		// TODO Auto-generated method stub
+		int counts = productDAO.getPagesByName(name);
+		int pages = 0;
+		if( counts % prePage == 0 ){
+			pages = counts % prePage ;
+		}else{
+			pages = counts / prePage + 1 ;
+		}
+		return pages;
+	}
 }

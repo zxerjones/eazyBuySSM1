@@ -11,7 +11,7 @@
 
 <div class="log_bg">	
     <div class="top">
-        <div class="logo"><a href="goodsHandler/getAll"><img src="images/logo.png" /></a></div>
+        <div class="logo"><a href="goodsHandler/getAll"><img src="images/logomaimai.png" /></a></div>
     </div>
 	<div class="login">
     	<div class="log_img"><img src="images/l_img.png" width="611" height="425" /></div>

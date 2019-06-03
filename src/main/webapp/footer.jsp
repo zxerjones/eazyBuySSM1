@@ -65,17 +65,11 @@
     <a href="#" class="b_sh2">腾讯微博</a>
     <p>
       服务热线：<br />
-      <span>400-123-4567</span>
+      <span>187-0079-7050</span>
     </p>
   </div>
   <div class="b_er">
-    <div class="b_er_c"><img src="images/er.gif" width="118" height="118" /></div>
+    <div class="b_er_c"><img src="images/er.jpg" width="118" height="118" /></div>
     <img src="images/ss.png" />
-  </div>
-</div>
-<div class="btmbg">
-  <div class="btm">
-    备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
-    <img src="images/b_1.gif" width="98" height="33" /><img src="images/b_2.gif" width="98" height="33" /><img src="images/b_3.gif" width="98" height="33" /><img src="images/b_4.gif" width="98" height="33" /><img src="images/b_5.gif" width="98" height="33" /><img src="images/b_6.gif" width="98" height="33" />
   </div>
 </div>
